@@ -4,8 +4,8 @@
   "description": "fullstack web app,node.js,exprss,mongodb",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+   "start": "node app.js "  
+ },
   "keywords": [
     "fullstack",
     "web",
