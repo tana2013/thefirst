@@ -1,0 +1,23 @@
+<h2> Search Book </h2>
+<form action="/books" method="GET">
+    <div>
+        <label for="Title">Title</label>
+    <input type="text" name="title" id="Title" placeholder="Enter Title Here" value="<%= searchOptions.title %>" >
+    </div>
+    <div>
+        <label for="PublishedAfter">Published After</label>
+    <input type="date" name="publishedAfter" id="PublishedAfter" placeholder="Enter  Here" value="<%= searchOptions.publishedAfter %>" >
+    </div>
+    <div>
+        <label for="PublishedBefore">Published Before</label>
+    <input type="date" name="publishedBefore" id="PublishedBefore" placeholder="Enter Here" value="<%= searchOptions.publishedBefore %>" >
+    </div>
+    <button type="submit">Search</button>
+</form>
+<div>
+    <% books.forEach(book => { %>
+        <img height="150" width="100" src="<%= book.coverImagePath %>">
+    <% }) %> 
+
+</div>
+ 
