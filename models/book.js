@@ -26,11 +26,14 @@ const bookSchema = new mongoose.Schema({
         required: true,
         ref: 'Author'
     },
+    coverImage: {
+        type: Buffer,
+        required: true
+    },
     coverImageType:{
         type: String,
         required: true
     }
-
 })
 
 bookSchema.virtual('coverImagePath').get(function() {

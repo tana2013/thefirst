@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
         <!-- here the link to the files on a CDN codes -->
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
@@ -25,16 +26,19 @@
         <!-- here the link to my created js file link  here -->
     <script defer src="/javascripts/fileUpload.js"></script>
 
-    <title>First Web App </title>
+        <!-- here the link to my created CSS file link  here -->
+    <link id="main-css" rel="stylesheet" href="/stylesheets/main.css">
+    <title>Library App </title>
 </head>
 <body>
 
-    <hr><br>
-    <%- include ('../partials/header.ejs') %> 
-    <%- include ('../partials/errorMessage.ejs') %> 
-
-    <%- body %> 
-    <hr><br>
+    <div class="container">
+        <%- include('../partials/header.ejs') %>
+        <div class="inner-container">
+          <%- include('../partials/errorMessage.ejs') %>
+          <%- body %>
+        </div>
+    </div>
 
 </body>
 </html>

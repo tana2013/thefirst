@@ -1,23 +1,25 @@
-<h2> Search Book </h2>
+<h2 class="page-header"> Search Book </h2>
 <form action="/books" method="GET">
-    <div>
-        <label for="Title">Title</label>
-        <input type="text" name="title" id="Title" placeholder="Enter Title Here" value="<%= searchOptions.title %>" >
+    <div class="form-row">
+        <div class="form-item">
+            <label for="Title">Title</label>
+            <input type="text" name="title" id="Title" placeholder="Enter Title Here" value="<%= searchOptions.title %>" >
+        </div>
     </div>
-    <div>
-        <label for="PublishedAfter">Published After</label>
-        <input type="date" name="publishedAfter" id="PublishedAfter" placeholder="Enter  Here" value="<%= searchOptions.publishedAfter %>" >
+    <div class="form-row">
+        <div class="form-item">
+            <label for="PublishedAfter">Published After</label>
+            <input type="date" name="publishedAfter" id="PublishedAfter" placeholder="Enter  Here" value="<%= searchOptions.publishedAfter %>" >
+        </div>
+  
+        <div class="form-item">
+            <label for="PublishedBefore">Published Before</label>
+            <input type="date" name="publishedBefore" id="PublishedBefore" placeholder="Enter Here" value="<%= searchOptions.publishedBefore %>" >
+        </div>
     </div>
-    <div>
-        <label for="PublishedBefore">Published Before</label>
-        <input type="date" name="publishedBefore" id="PublishedBefore" placeholder="Enter Here" value="<%= searchOptions.publishedBefore %>" >
+    <div class="form-row form-row-end">
+        <button class="btn btn-primary" type="submit">Search</button>
     </div>
-    <button type="submit">Search</button>
 </form>
-<div>
-    <% books.forEach(book => { %>
-        <img height="150" width="100" src="<%= book.coverImagePath %>">
-    <% }) %> 
-
-</div>
- 
+<br>
+<%- include('../partials/bookGrid', { books: books, large: true }) %>
